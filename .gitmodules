@@ -1,0 +1,3 @@
+[submodule "BenchMARL"]
+	path = BenchMARL
+	url = https://github.com/ZW471/BenchMARL.git
