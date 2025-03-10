@@ -1,3 +1,6 @@
 [submodule "BenchMARL"]
 	path = BenchMARL
 	url = https://github.com/ZW471/BenchMARL.git
+[submodule "VectorizedMultiAgentSimulator"]
+	path = VectorizedMultiAgentSimulator
+	url = https://github.com/ZW471/VectorizedMultiAgentSimulator.git
