@@ -41,30 +41,19 @@ class EGNNLayer(MessagePassing):
             Linear(2 * emb_dim + 1, emb_dim),
             self.norm(emb_dim),
             self.activation,
-            Dropout(dropout),
-            Linear(emb_dim, emb_dim),
-            self.norm(emb_dim),
-            self.activation,
-            Dropout(dropout),
         )
         # MLP `\psi_x` for computing messages `\overrightarrow{m}_ij`
         self.mlp_pos = Sequential(
-            Linear(emb_dim, emb_dim),
-            self.norm(emb_dim),
-            self.activation,
-            Dropout(dropout),
             Linear(emb_dim, 1),
+            self.norm(1),
+            self.activation,
         )
         # MLP `\phi` for computing updated node features `h_i^{l+1}`
         self.mlp_upd = Sequential(
             Linear(2 * emb_dim, emb_dim),
             self.norm(emb_dim),
             self.activation,
-            Dropout(dropout),
-            Linear(emb_dim, emb_dim),
-            self.norm(emb_dim),
-            self.activation,
-            Dropout(dropout),
+            Dropout(dropout)
         )
 
     def forward(
